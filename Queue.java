@@ -26,8 +26,20 @@ class TestQueue{
 		array[end]=data; // item inserted
 		no_item++; 
 	}
+	public long remove(){
+		long old=array[front]; //first element will be store
+		front++; // then goes to next element
+		if(front==maxsize)
+		{
+			front=0;  // if only one item is added and try to remove that item then it show null queue
+		}
+		return old;
+		
+		
+	}
 	
-	public boolean isempty(){
+	
+	public boolean isEmpty(){
 	return (no_item==0);
 	
 	}
@@ -56,7 +68,7 @@ class Queue{
 		queue.insert(90);
 		queue.insert(100);
 		
-		while(!queue.isempty()){
+		while(!queue.isEmpty()){
 			queue.display();
 				break;
 		}
